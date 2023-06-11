@@ -5,7 +5,7 @@ from twilio.rest import Client
 from fastapi import FastAPI, Form, Response
 from twilio.twiml.messaging_response import MessagingResponse
 from src.chatbot.agent import Agent_BOT
-
+from src.conf import CLIENT
 load_dotenv()
 account_sid = os.environ["TWILIO_ACCOUNT_SID"]
 auth_token = os.environ["TWILIO_AUTH_TOKEN"]
@@ -14,7 +14,7 @@ twilio_number = os.environ["TWILIO_NUMBER"]
 
 client = Client(account_sid, auth_token)
 app = FastAPI()
-agent = Agent_BOT()
+agent = Agent_BOT(memory_client= CLIENT)
 
 
 def send_message(body_text):
