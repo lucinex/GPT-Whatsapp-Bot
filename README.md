@@ -55,6 +55,7 @@ Will soon update with whatsapp messages ss !
 1. Create query agent only for documents from a given Dir, like csv_agent.
 2. Feedback mechanism.
 3. Write better memory module.
+4. Add parsing error handling in langchain .
 
 #### Overall
 
