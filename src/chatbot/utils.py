@@ -23,10 +23,13 @@ def mkdir_if_dne(path):
         return True
 
 
-def get_folders(path):
+def get_folders(path, exclude: list = None):
     folders = []
     if os.path.isdir(path):
         for i in os.listdir(path):
+            if exclude:
+                if i in exclude:
+                    continue
             nw_path = path + "/" + i
             if os.path.isdir(nw_path):
                 folders.append(nw_path)
@@ -43,3 +46,24 @@ def get_embedding_function(model_name=EMBEDDING_MODEL_NAME, langchain=False):
         EMBED_MODEL = HuggingFaceEmbeddings(model_name=EMBEDDING_MODEL_NAME)
 
     return EMBED_MODEL
+
+
+class AgentSettings:
+    PERSONA = ""
+    AGENT_TYPE = "general"
+    AGENT_KWARGS = {"kwargs": None}
+    SAVE_DIR = "/src/chatbot/agent_settings.yaml"
+
+    def __init__(self, dir):
+        self.save_dir = dir
+
+        pass
+
+    # def set(self,**kwargs):
+
+    #     pass
+    # def refresh(self):
+    #     # load json
+    # def save(self):
+    #     # save json
+    # def set_default(self):

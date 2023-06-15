@@ -26,7 +26,7 @@ def send_message(body_text):
 
 
 def reply(text):
-    return agent.run(text)
+    return agent.run(text)[:1590]   # twillio only lets 1600 characters 
 
 
 class ChatResource:
@@ -38,8 +38,18 @@ class ChatResource:
     async def hook_chat(self, Body: str = Form(...)):
         message = str(Body)
         print(message)
-        if message == "yessir":
+        if message.lower().strip() == "yessir":
             response = "Bulls EYE"
+        elif message.lower().strip() == "reset":
+            response = "Resetting Agent Type"
+            agent.reset_agent_type()
+        elif message.lower().strip() == "analytics":
+            if agent.analytics:
+                agent.analytics = False
+                response = "Analytics is set to False"
+            else:
+                agent.analytics = True
+                response = "Analytics is set to True"
         else:
             response = reply(message)
         return send_message(response)

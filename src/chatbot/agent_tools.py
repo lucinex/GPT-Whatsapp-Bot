@@ -71,7 +71,9 @@ def load_context_document_tool(context="test"):
         return None
 
 
-def load_listfiles_tools(working_dir=DATA_DIR, folders=get_folders(DATA_DIR)):
+def load_listfiles_tools(
+    working_dir=DATA_DIR, folders=get_folders(DATA_DIR, exclude=["CSV"])
+):
     assert os.path.isdir(working_dir) == True, f"No directiory exists :{working_dir}"
     if type(folders) == list and len(folders) > 0:
         all_tools = []

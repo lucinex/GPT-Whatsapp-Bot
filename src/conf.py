@@ -11,10 +11,14 @@ from pathlib import Path
 AGENT_DATA_PATH = "src/chatbot/agent_data"
 AGENT_CHROMA_DATA_PATH = "src/chatbot/agent_data/chroma"
 DATA_DIR = "src/chatbot/data"
+CSV_DATA_DIR = "src/chatbot/data/CSV"
+
+Path(DATA_DIR).mkdir(exist_ok=True)
+Path(CSV_DATA_DIR).mkdir(exist_ok=True)
 
 Path(AGENT_DATA_PATH).mkdir(exist_ok=True)
 Path(AGENT_CHROMA_DATA_PATH).mkdir(exist_ok=True)
-Path(AGENT_DATA_PATH)
+
 
 PARENT_SRC = os.getcwd()
 CHUNK_SIZE = 1000
@@ -28,4 +32,6 @@ AGENT_SETTINGS = {
     "HumanName": "SHUVRA NEEL ROY",
     "AgentName": "Luci",
 }
+
+
 EMBEDDING_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
