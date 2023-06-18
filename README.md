@@ -32,7 +32,7 @@ OPENAI_API_KEY = "" # your openai key
 MY_NUMBER = "whatsapp:+81123456789" # add your number here with country code.
 TWILIO_NUMBER = "whatsapp:+14987654321" # twilio number you recieve text from.
 
-3. Create a webhook endpoint with ngrok. Setup with your credentials once signed up to their website ('https://ngrok.com/'). On System, install ngrok, and configure your account settings. Then run "ngrok http 8000". If everything went well, get the forwarding url
+3. Create a webhook endpoint with ngrok. Setup with your credentials once signed up to their website ('https://ngrok.com/'). On System, install ngrok, and configure your account settings. Then run "ngrok http 8000". If everything went well, webhook will be online and you can get the Forwarding URL which ends with "....ngrok-free.app". This url will be used by twilio to POST request to ngrok webhook which redirects the request to our server running the forwarding url. 
 4. Create a twilio account. Get the SID , API_TOKEN. Save it in the .env file.
 5. Then go to twillio messeging services (sandbox), activate whatsapp messaging, there enter your phone number and follow the steps which should lead to sending and recieving whatsapp message from twilio.
 6. Get the twilio account number. Save it in .env file. In the senndbox settings paste the webhook url (forwarding url from step 2) also adding the endpoint like given --> "....ngrok-free.app/hook_chat" in the webhook area mentioned.
