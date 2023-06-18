@@ -10,7 +10,7 @@ It Has Access to few of these tools:
 2. Python Repl : Do Pythonic stuff !
 3. Add / Delete Documents to vector db: You can ask which files you have access to and ask to specifically add or delete from the vector db. Should load a document before using the next tool.
 4. Query_documents: Query the documents you've loaded. You can ask what documents you can query from.
-5. Chat with CSV : Lets you chat with an agent that can access a CSV in the CSV Directory. You can choose which csvs to choose by asking the agent what csvs it has. Will load up a new agent with the mentioned csvs loaded.
+5. Chat with CSV : Transfers flow to an agent that can access multiple CSVs in a Directory named CSV :p . You can choose which csvs to load by asking what csvs does the agent has information about. Mention which csvs youd want to chat with by saying, "Chat with cs1v.csv and csv2.csv' / or "I want to chat with csv 1 and 2." . Whatever goes.
 
 Notes:
 There are general keywords that can be sent via chat to change settings. Like
